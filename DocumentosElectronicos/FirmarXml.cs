@@ -17,9 +17,9 @@ using X509Certificate = java.security.cert.X509Certificate;
 
 namespace DocumentosElectronicos
 {
-    public class FacturacionElectronica
+    public class FirmarXml
     {
-        public static void FirmarXml(string origen, string destino, string rutaFirma, string contraseniaFirma)
+        public static void Firmar(string origen, string destino, string rutaFirma, string contraseniaFirma)
         {
             PrivateKey privateKey;
             Provider provider;
@@ -33,24 +33,22 @@ namespace DocumentosElectronicos
                 TrustFactory.truster = MyPropsTruster.getInstance();
                 PoliciesManager.POLICY_SIGN = new Facturae31Manager();
                 PoliciesManager.POLICY_VALIDATION = new Facturae31Manager();
-
-                //Crear datos a firmar  
+                TrustFactory.instance = TrustFactory.newInstance();
+                TrustFactory.truster = PropsTruster.getInstance();
+                PoliciesManager.POLICY_SIGN = new Facturae31Manager();
+                PoliciesManager.POLICY_VALIDATION = new Facturae31Manager();
                 DataToSign dataToSign = new DataToSign();
-                dataToSign.setXadesFormat(EnumFormatoFirma.XAdES_BES); //XAdES-EPES  
+                dataToSign.setXadesFormat(EnumFormatoFirma.XAdES_BES);
                 dataToSign.setEsquema(XAdESSchemas.XAdES_132);
-                dataToSign.setPolicyKey("facturae31"); //Da igual lo que pongamos aquí, la política de firma se define arriba  
-                dataToSign.setAddPolicy(true);
                 dataToSign.setXMLEncoding("UTF-8");
                 dataToSign.setEnveloped(true);
-                dataToSign.addObject(new ObjectToSign(new AllXMLToSign(), "Descripcion del documento", null, "text/xml", null));
+                dataToSign.setParentSignNode("comprobante");
+                dataToSign.addObject(new ObjectToSign(new InternObjectToSign("comprobante"), "contenido comprobante", null, "text/xml", null));
                 dataToSign.setDocument(Erp90w(origen));
-                //dataToSign.setDocument(LoadXML(origen));
-
-                //Firmar  
-                Object[] res = new FirmaXML().signFile(certificate, dataToSign, privateKey, provider);
-
-                // Guardamos la firma a un fichero en el home del usuario  
-                UtilidadTratarNodo.saveDocumentToOutputStream((Document)res[0], new FileOutputStream(destino), true);
+                object[] objArray = (new FirmaXML()).signFile(certificate, dataToSign, privateKey, provider);
+                FileOutputStream fileOutputStream = new FileOutputStream(destino);
+                UtilidadTratarNodo.saveDocumentToOutputStream((Document)objArray[0], fileOutputStream, true);
+                fileOutputStream.close();
             }
         }
 
