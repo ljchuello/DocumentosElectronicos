@@ -33,6 +33,66 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="commons-logging-1.1, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\commons-logging-1.1.dll</HintPath>
+    </Reference>
+    <Reference Include="facturaE_additional, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\facturaE_additional.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.42.0.6, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibAPI-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibAPI-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibCert-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibCert-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibPolicy-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibPolicy-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibTrust-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibTrust-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibTSA-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibTSA-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibXADES-1.0.4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\MITyCLibXADES-1.0.4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +101,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="xmlsec-1.4.2-ADSI-1.0, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ddl\xmlsec-1.4.2-ADSI-1.0.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacturacionElectronica.cs" />
@@ -49,6 +113,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ddl\commons-logging-1.1.dll" />
+    <Content Include="ddl\facturaE_additional.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.Core.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.Security.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.Text.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.Util.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.XML.API.dll" />
+    <Content Include="ddl\IKVM.OpenJDK.XML.Parse.dll" />
+    <Content Include="ddl\IKVM.Runtime.dll" />
+    <Content Include="ddl\MITyCLibAPI-1.0.4.dll" />
+    <Content Include="ddl\MITyCLibCert-1.0.4.dll" />
+    <Content Include="ddl\MITyCLibPolicy-1.0.4.dll" />
+    <Content Include="ddl\MITyCLibTrust-1.0.4.dll" />
+    <Content Include="ddl\MITyCLibTSA-1.0.4.dll" />
+    <Content Include="ddl\MITyCLibXADES-1.0.4.dll" />
+    <Content Include="ddl\xmlsec-1.4.2-ADSI-1.0.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
